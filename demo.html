@@ -1,0 +1,23 @@
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.7/angular-material.min.css">
+<!---->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.4/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.4/angular-animate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.4/angular-aria.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.7/angular-material.min.js"></script>
+<script src="timepicker.js"></script>
+<script>
+angular
+    .module('main', ['timepicker'])
+    .controller('mainCtrl', function($scope) {
+        $scope.date2 = new Date();
+        $scope.date2.setMilliseconds(0);
+    })
+</script>
+<html ng-app='main' ng-controller="mainCtrl">
+
+<body>
+    <timepicker ng-model='date2' step=600000></timepicker>
+    <input type='time' ng-model='date2'>
+</body>
+
+</html>
